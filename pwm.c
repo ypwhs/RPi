@@ -2,7 +2,7 @@
 #include <wiringPi.h>
 int main()
 {
-    setup();
-    printf("主线程开始\n");
+    wiringPiSetup();
+    pinMode(1, PWM_OUTPUT);
     pwmWrite(1,100);
 }
