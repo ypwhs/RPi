@@ -1,0 +1,2 @@
+mkdir /mnt/upan
+mount -t vfat /dev/sda1 /mnt/upan

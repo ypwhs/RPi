@@ -1,0 +1,2 @@
+gcc detectHuman.c -o detectHuman -lwiringPi
+./detectHuman
