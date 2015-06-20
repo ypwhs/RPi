@@ -3,23 +3,23 @@
 #define LED 0
 #define Sensor 1
 void takePhoto(){
-	FILE *p=fopen("img/now.txt","r");
+	FILE *p=fopen("/var/www/img/now.txt","r");
 	int num = 0;
 	if(p == NULL){
-		FILE *q=fopen("img/now.txt","w");
+		FILE *q=fopen("/var/www/img/now.txt","w");
 		fprintf(q, "%d", num+1);
 		num++;
 		fclose(q);
 	}else{
 		fscanf(p, "%d", &num);
-		FILE *q=fopen("img/now.txt","w");
+		FILE *q=fopen("/var/www/img/now.txt","w");
 		fprintf(q, "%d", num+1);
 		num++;
 		fclose(q);
 		fclose(p);
 	}
 	char cmd[200]={0};
-	sprintf(cmd, "raspistill -t 1 -o img/%d.jpg -w 1920 -h 1080", num);
+	sprintf(cmd, "raspistill -t 1 -o /var/www/img/%d.jpg -w 1920 -h 1080", num);
 	printf("%s\n", cmd);
 	system(cmd);
 }

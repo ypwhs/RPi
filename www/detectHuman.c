@@ -28,6 +28,7 @@ int main()
 	wiringPiSetup();
 	pinMode(LED, OUTPUT);
 	pinMode(Sensor, INPUT);
+	digitalWrite(LED, LOW);
 	while(1){
 		int sensor = digitalRead(Sensor);
 		if(sensor){
